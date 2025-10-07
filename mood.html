@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Set Mood</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="mood-page">
+  <div class="mood-container">
+    <h2>How are you feeling today?</h2>
+
+    <!-- Slider Wrapper -->
+    <div class="slider-wrapper">
+      <input type="range" min="0" max="4" value="1" class="mood-slider" id="moodSlider">
+
+      <!-- Mood Icons -->
+      <div class="mood-icons">
+        <img src="assets/peaceful.png" alt="Calm">
+        <img src="assets/happy.png" alt="Happy">
+        <img src="assets/mid.png" alt="Neutral">
+        <img src="assets/sad.png" alt="Stressed">
+        <img src="assets/angry.png" alt="Angry">
+      </div>
+    </div>
+
+    <!-- Mood Label -->
+    <p id="moodLabel">😊 Happy</p>
+
+    <!-- Submit Button -->
+    <button class="mood-submit" onclick="saveMood()">Confirm Mood</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

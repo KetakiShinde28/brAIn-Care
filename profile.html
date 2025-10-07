@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>brAIn Care - Profile</title>
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="profile-page">
+
+  <!-- Header -->
+  <header class="hc-header">
+    <h1>Profile</h1>
+  </header>
+
+  <main class="hc-main">
+    
+    <!-- Top Profile Section -->
+    <section class="profile-top">
+      <img src="assets/user.png" alt="User Avatar" class="profile-avatar">
+      <h2 class="profile-username">Username</h2>
+      <p class="profile-mood">Feeling Happy 😊</p>
+      <button class="edit-profile-btn">Edit Profile</button>
+
+      <div class="profile-stats">
+        <div class="stat">
+          <h3>5 🔥</h3>
+          <p>Weekly Streak</p>
+        </div>
+        <div class="stat">
+          <h3>8</h3>
+          <p>Activities</p>
+        </div>
+        <div class="stat">
+          <h3>12</h3>
+          <p>Longest Streak</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Divider -->
+    <hr class="divider">
+
+    <!-- Account Info -->
+    <section class="profile-card">
+      <h3>Account Info</h3>
+      <div class="info-item">
+        <span>Email:</span>
+        <span>user@example.com</span>
+      </div>
+      <div class="info-item">
+        <span>Joined:</span>
+        <span>Jan 2025</span>
+      </div>
+    </section>
+
+    <!-- Mood & Progress -->
+    <section class="profile-card">
+      <h3>My Progress</h3>
+      <p>🌱 Keep up the good work! You're on day <strong>5</strong> of your streak.</p>
+      <div class="progress-bar">
+        <div class="progress" style="width: 70%;"></div>
+      </div>
+    </section>
+
+    <!-- Settings -->
+    <section class="profile-card settings">
+      <h3>Settings</h3>
+      <ul>
+        <li><span>🔔 Notifications</span></li>
+        <li><span>🔒 Privacy</span></li>
+        <li><span>⚙️ Account Settings</span></li>
+        <li><span>❓ Help & Support</span></li>
+        <li class="logout"><span>🚪 Logout</span></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Bottom Navigation -->
+  <nav class="bottom-nav">
+    <a href="games.html"><img src="assets/games-icon.png" alt="Games"></a>
+    <a href="home.html"><img src="assets/home-icon.png" alt="Home"></a>
+    <a href="plant.html"><img src="assets/plant.png" alt="Plant"></a>
+    <a href="profile.html" class="active"><img src="assets/avatar-profile.png" alt="Profile"></a>
+  </nav>
+
+  <!-- Shared JS -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Information</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="personal-page">
+
+  <div class="personal-container">
+    <div class="intro-section">
+      <img src="assets/chiki.png" alt="Chiki Mascot" class="mascot">
+      <p class="intro-text">
+        Hi, I am Chiki, your personal companion. <br>
+        Before we get started, tell me a bit about yourself so that I can assist you better
+      </p>
+    </div>
+
+    <form id="personal-form">
+      <label for="nickname">What would you like me to call you?</label>
+      <input type="text" id="nickname" name="nickname" placeholder="Enter your name" required>
+
+      <label for="age">How old are you?</label>
+      <input type="number" id="age" name="age" placeholder="Enter your age" required>
+
+      <label for="gender">Gender</label>
+      <select id="gender" name="gender" required>
+        <option value="" disabled selected>Select your gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+
+      <p class="section-title">Primary Reason for Using the App</p>
+      <div class="chip-group">
+        <button type="button" class="chip">Reduce Stress</button>
+        <button type="button" class="chip">Improve Sleep</button>
+        <button type="button" class="chip">Manage Anxiety</button>
+        <button type="button" class="chip">Build Positivity</button>
+        <button type="button" class="chip">Track Emotions</button>
+        <button type="button" class="chip">General Well-being</button>
+      </div>
+
+      <p class="section-title">Preferred Activity Types</p>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="activity" value="relaxation"> Relaxation/Breathing Games</label>
+        <label><input type="checkbox" name="activity" value="journaling"> Journaling / Reflection</label>
+        <label><input type="checkbox" name="activity" value="puzzles"> Puzzles / Mind Challenges</label>
+        <label><input type="checkbox" name="activity" value="quickmood"> Quick Mood Boosters</label>
+        <label><input type="checkbox" name="activity" value="meditation"> Meditation / Guided Audio</label>
+      </div>
+
+      <label for="song">What is your most favourite song?</label>
+      <input type="text" id="song" name="song" placeholder="Enter song name">
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

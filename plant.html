@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>brAIn Care - My Plant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="plant-page">
+
+  <!-- Header -->
+  <header class="hc-header">
+    <h1>My Plant</h1>
+    <p class="subtitle">Nurture your mind, grow your plant 🌱</p>
+  </header>
+
+  <main class="hc-main">
+
+    <!-- Plant Section -->
+    <section class="plant-visual">
+      <!-- start with the seed/stage1 image -->
+      <img id="plantImage" src="assets/plant-grow1.png" alt="Plant stage">
+      <div id="growthStatus" class="growth-status">Growth: 35%</div>
+      <button id="nurtureBtn" class="nurture-btn" aria-haspopup="dialog">Nurture the Tree</button>
+    </section>
+
+    <!-- Daily Tasks -->
+    <section class="tasks">
+      <h2>Daily Tasks</h2>
+      <div class="tasks-grid">
+        <div class="task-card" onclick="completeTask('water')">
+          <img src="assets/water.png" alt="Water">
+          <h3>Water Plant</h3>
+          <p>Keep it hydrated</p>
+        </div>
+        <div class="task-card" onclick="completeTask('journal')">
+          <img src="assets/journal.png" alt="Journal">
+          <h3>Write Journal</h3>
+          <p>Express and heal</p>
+        </div>
+        <div class="task-card" onclick="completeTask('meditate')">
+          <img src="assets/meditate.png" alt="Meditate">
+          <h3>Meditate</h3>
+          <p>Find your calm</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Popup -->
+  <div class="popup-overlay" id="popupOverlay" aria-hidden="true" role="dialog">
+    <div class="popup" role="document">
+      <h3>Write something positive 🌸</h3>
+      <textarea id="positiveInput" placeholder="Type your thoughts..." aria-label="Positive input"></textarea>
+      <div style="display:flex;gap:10px;justify-content:center;margin-top:12px;">
+        <button id="growBtn" class="popup-btn">Let it Grow</button>
+        <button id="cancelGrow" class="popup-btn alt">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="bottom-nav">
+    <a href="games.html"><img src="assets/games-icon.png" alt="Games"></a>
+    <a href="home.html"><img src="assets/home-icon.png" alt="Home"></a>
+    <a href="plant.html" class="active"><img src="assets/plant.png" alt="Plant"></a>
+    <a href="profile.html"><img src="assets/avatar-profile.png" alt="Profile"></a>
+  </nav>
+
+  <!-- Shared JS (deferred) -->
+  <script src="script.js" defer></script>
+</body>
+</html>

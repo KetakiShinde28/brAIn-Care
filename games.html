@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Games</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="games-header">
+    <h1>Games</h1>
+    <p class="subtitle">Choose a game to boost your mood!</p>
+  </header>
+
+  <!-- Current Mood Ribbon -->
+  <div class="mood-ribbon">
+    <span>Current Mood:</span>
+    <span class="mood-status">😊 Happy</span>
+  </div>
+
+  <!-- Streak -->
+  <div class="streak">
+    <p>Your streak: <strong>5 days 🔥</strong></p>
+  </div>
+
+  <!-- Games Grid -->
+  <section class="games-grid">
+    <div class="game-card" onclick="openGame('mood-match.html')">
+      <div class="icon">😀</div>
+      <h3>Mood Match</h3>
+      <p>Match emoji pairs</p>
+    </div>
+    <div class="game-card" onclick="openGame('breathing.html')">
+      <div class="icon">🌬️</div>
+      <h3>Breathing Game</h3>
+      <p>Pop bubbles with inhale/exhale</p>
+    </div>
+    <div class="game-card" onclick="openGame('memory-flip.html')">
+      <div class="icon">🧠</div>
+      <h3>Memory Flip</h3>
+      <p>Flip cards and match</p>
+    </div>
+    <div class="game-card" onclick="openGame('step-boost.html')">
+      <div class="icon">🏃</div>
+      <h3>Step Boost</h3>
+      <p>Movement mini-game</p>
+    </div>
+  </section>
+
+  <!-- Leaderboard/Progress Section -->
+  <div class="progress-section">
+    <p>Games played this week: <strong>8</strong></p>
+  </div>
+
+  <!-- Bottom Navigation -->
+  <nav class="bottom-nav">
+    <a href="games.html"><img src="assets/games-icon.png" alt="Games"></a>
+    <a href="home.html" class="active"><img src="assets/home-icon.png" alt="Home"></a>
+    <a href="plant.html"><img src="assets/plant.png" alt="Plant"></a>
+    <a href="profile.html"><img src="assets/avatar-profile.png" alt="Profile"></a>
+  </nav>
+
+  <script src="games.js"></script>
+</body>
+</html>

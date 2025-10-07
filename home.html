@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>brAIn Care - Home</title>
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="home-page">
+
+  <!-- Header -->
+  <header class="hc-header">
+    <h1>brAIn Care</h1>
+  </header>
+
+  <main class="hc-main">
+    <!-- Current Mood Ribbon -->
+    <section class="mood-ribbon">
+      <div class="mood-left">Current Mood:</div>
+      <div id="currentMood" class="mood-right">—</div>
+    </section>
+
+    <!-- Weekly Reports Dashboard -->
+    <section class="weekly-reports card-section">
+      <div class="section-head">
+        <h2>Weekly Reports</h2>
+      </div>
+      <div class="chart-wrap">
+        <canvas id="weeklyChart" aria-label="Weekly mood chart"></canvas>
+      </div>
+
+      <div class="weekly-stats">
+        <div>Stress: <span id="stressLevel">Medium</span></div>
+        <div>Sleep: <span id="sleepScore">Good 🌙✨</span></div>
+        <div>Activities: <span id="activityCount">4/7 days 🕹️</span></div>
+        <div>Streak: <span id="streak">5 days 🔥</span></div>
+        <div>Highlight: <span id="highlight">Thursday 🎉</span></div>
+      </div>
+    </section>
+
+    <!-- Suggestions Grid -->
+    <section class="suggestions card-section">
+      <div class="section-head"><h2>Suggestions for You</h2></div>
+      <div class="grid">
+        <div class="card">
+          <img src="assets/meditate.png" alt="Meditate">
+          <div class="card-text">Meditate 5 min</div>
+        </div>
+        <div class="card">
+          <img src="assets/read.png" alt="Read">
+          <div class="card-text">Read 10 min</div>
+        </div>
+        <div class="card">
+          <img src="assets/walk.png" alt="Walk">
+          <div class="card-text">Walk 5 min</div>
+        </div>
+        <div class="card">
+          <img src="assets/music.png" alt="Music">
+          <div class="card-text">Listen to calming music</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Today's Insights -->
+    <section class="insights card-section">
+      <div class="section-head"><h2>Today's Insights</h2></div>
+      <div class="insight-scroll">
+        <div class="insight-card">👏 You’re happier than yesterday</div>
+        <div class="insight-card">🚶 Try a short walk</div>
+        <div class="insight-card">🌱 Small steps count</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Fixed Bottom Navigation -->
+  <nav class="bottom-nav">
+    <a href="games.html"><img src="assets/games-icon.png" alt="Games"></a>
+    <a href="home.html" class="active"><img src="assets/home-icon.png" alt="Home"></a>
+    <a href="plant.html"><img src="assets/plant.png" alt="Plant"></a>
+    <a href="profile.html"><img src="assets/avatar-profile.png" alt="Profile"></a>
+  </nav>
+
+  <!-- External JS only -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
