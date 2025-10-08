@@ -622,6 +622,13 @@ body {
   font-size: 13px;
   color: #666;
 }
+.game-card img.game-icon {
+  width: 70px;        
+  height: 70px;
+  object-fit: contain;  
+  border-radius: 12px; 
+}
+
 
 /* Progress Section */
 .progress-section {
