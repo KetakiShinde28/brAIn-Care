@@ -186,3 +186,112 @@ function checkReframe() {
 
 // Load the first sentence when page starts
 document.addEventListener("DOMContentLoaded", loadReframe);
+
+// ===========================
+// Step Boost Game Logic
+// ===========================
+let timers = [];
+let completed = 0;
+const totalActivities = 5;
+
+document.addEventListener("DOMContentLoaded", () => {
+  const activityCards = document.querySelectorAll(".activity-card");
+  activityCards.forEach((card, index) => (card.dataset.id = index));
+});
+
+function startTimer(button, seconds) {
+  const card = button.closest(".activity-card");
+  const timerDisplay = card.querySelector(".timer");
+
+  // Prevent multiple starts
+  if (card.dataset.active === "true") return;
+
+  card.dataset.active = "true";
+  let timeLeft = seconds;
+  timerDisplay.textContent = formatTime(timeLeft);
+
+  const id = card.dataset.id;
+  timers[id] = setInterval(() => {
+    timeLeft--;
+    timerDisplay.textContent = formatTime(timeLeft);
+
+    if (timeLeft <= 0) {
+      clearInterval(timers[id]);
+      timerDisplay.textContent = "Done!";
+      markCompleted(card);
+      card.dataset.active = "false";
+    }
+  }, 1000);
+}
+
+function pauseTimer(button) {
+  const card = button.closest(".activity-card");
+  const id = card.dataset.id;
+  if (timers[id]) {
+    clearInterval(timers[id]);
+    card.dataset.active = "false";
+  }
+}
+
+function endTimer(button) {
+  const card = button.closest(".activity-card");
+  const id = card.dataset.id;
+  clearInterval(timers[id]);
+
+  const timerDisplay = card.querySelector(".timer");
+  timerDisplay.textContent = "Ended";
+  markCompleted(card);
+  card.dataset.active = "false";
+}
+
+function markDone(button) {
+  const card = button.closest(".activity-card");
+  markCompleted(card);
+}
+
+function markCompleted(card) {
+  if (card.classList.contains("done")) return;
+
+  card.classList.add("done");
+  completed++;
+
+  const message = document.createElement("p");
+  message.textContent = "✅ Good job!";
+  message.style.color = "#2e7d32";
+  message.style.marginTop = "10px";
+  card.appendChild(message);
+
+  if (completed === totalActivities) {
+    showPopup();
+  }
+}
+
+function formatTime(seconds) {
+  const mins = Math.floor(seconds / 60);
+  const secs = seconds % 60;
+  return `${mins.toString().padStart(2, "0")}:${secs
+    .toString()
+    .padStart(2, "0")}`;
+}
+
+/* ===========================
+   Popup Handling
+   =========================== */
+function showPopup() {
+  const modal = document.createElement("div");
+  modal.classList.add("modal", "show");
+  modal.innerHTML = `
+    <div class="modal-content">
+      <h3>🌟 You did an amazing job! 🌟</h3>
+      <p>Take a moment to feel proud of yourself. You’ve completed all the activities!</p>
+      <button class="start-btn" onclick="closePopup(this)">Close</button>
+    </div>
+  `;
+  document.body.appendChild(modal);
+}
+
+function closePopup(button) {
+  const modal = button.closest(".modal");
+  modal.classList.remove("show");
+  setTimeout(() => modal.remove(), 300);
+}

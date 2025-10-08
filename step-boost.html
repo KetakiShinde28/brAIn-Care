@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Step Boost</title>
+  <link rel="stylesheet" href="games-style.css" />
+</head>
+<body>
+  <div class="step-container">
+    <button class="back-btn" onclick="window.location.href='games.html'">
+      <span class="arrow">←</span> Back
+    </button>
+
+    <h2>Step Boost 🏃‍♀️</h2>
+    <p class="instruction">Pick an activity to refresh your body and mind!</p>
+
+    <div class="activities">
+      <!-- Activity 1: Walk -->
+      <div class="activity-card" data-type="timer">
+        <h3>🚶 Walk Around for 5 Minutes</h3>
+        <div class="timer">05:00</div>
+        <div class="controls">
+          <button class="start-btn small" onclick="startTimer(this, 300)">Start</button>
+          <button class="pause-btn small" onclick="pauseTimer(this)">Pause</button>
+          <button class="end-btn small" onclick="endTimer(this)">End</button>
+        </div>
+      </div>
+
+      <!-- Activity 2: Smile -->
+      <div class="activity-card" data-type="done">
+        <h3>😊 Smile 5 Times</h3>
+        <button class="start-btn small" onclick="markDone(this)">I Did It!</button>
+      </div>
+
+      <!-- Activity 3: Stretch -->
+      <div class="activity-card" data-type="timer">
+        <h3>🧘 Stretch for 3 Minutes</h3>
+        <div class="timer">03:00</div>
+        <div class="controls">
+          <button class="start-btn small" onclick="startTimer(this, 180)">Start</button>
+          <button class="pause-btn small" onclick="pauseTimer(this)">Pause</button>
+          <button class="end-btn small" onclick="endTimer(this)">End</button>
+        </div>
+      </div>
+
+      <!-- Activity 4: Hydrate -->
+      <div class="activity-card" data-type="done">
+        <h3>💧 Drink a Glass of Water</h3>
+        <button class="start-btn small" onclick="markDone(this)">I Did It!</button>
+      </div>
+
+      <!-- Activity 5: Deep Breathing -->
+      <div class="activity-card" data-type="timer">
+        <h3>🌬️ Take Deep Breaths for 2 Minutes</h3>
+        <div class="timer">02:00</div>
+        <div class="controls">
+          <button class="start-btn small" onclick="startTimer(this, 120)">Start</button>
+          <button class="pause-btn small" onclick="pauseTimer(this)">Pause</button>
+          <button class="end-btn small" onclick="endTimer(this)">End</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="praise hidden" id="praise">🎉 Great job completing all activities! 🎉</div>
+  </div>
+
+  <script src="games-script.js"></script>
+</body>
+</html>
