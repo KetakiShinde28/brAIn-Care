@@ -251,3 +251,74 @@ body.match-game-page {
   from { transform: scale(1.5); }
   to { transform: scale(1); }
 }
+
+/* ===========================
+   Sentence Reframe Game Styles
+   =========================== */
+
+.reframe-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  height: 100vh;
+  border-radius: 20px 20px 20px 20px;
+  background: linear-gradient(135deg, #b2cee1, #e2ebf0); 
+}
+
+.sentence-box {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 350px;
+  margin-bottom: 25px;
+}
+
+#negative-sentence {
+  font-size: 18px;
+  color: #333;
+  font-weight: 500;
+}
+
+#user-input {
+  width: 80%;
+  max-width: 320px;
+  padding: 12px;
+  border: 2px solid #90caf9;
+  border-radius: 25px;
+  outline: none;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+#user-input:focus {
+  border-color: #42a5f5;
+  box-shadow: 0 0 5px rgba(66, 165, 245, 0.4);
+}
+
+.submit-btn {
+  background-color: #f06292;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 25px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #ec407a;
+}
+
+.feedback-text {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 15px;
+  color: #333;
+}

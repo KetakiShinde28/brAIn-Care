@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sentence Reframe</title>
+  <link rel="stylesheet" href="games-style.css">
+</head>
+<body class="reframe-page">
+
+  <!-- Back Button -->
+  <button class="back-btn" onclick="window.location.href='games.html'">
+    <span class="arrow">←</span> Back
+  </button>
+
+  <!-- Header -->
+  <header class="game-header">
+    <h1>Sentence Reframe 🌿</h1>
+    <p>Turn negative thoughts into positive ones</p>
+  </header>
+
+  <!-- Game Container -->
+  <main class="reframe-container">
+    <div class="sentence-box">
+      <p id="negative-sentence">Loading...</p>
+    </div>
+
+    <input type="text" id="user-input" placeholder="Type your positive version here..." />
+
+    <button class="submit-btn" onclick="checkReframe()">Submit</button>
+
+    <p id="feedback" class="feedback-text"></p>
+  </main>
+
+  <script src="games-script.js"></script>
+</body>
+</html>

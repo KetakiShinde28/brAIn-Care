@@ -135,3 +135,54 @@ function startBreathing() {
 
   breathingCycle();
 }
+
+// ===========================
+// Sentence Reframe Game Logic
+// ===========================
+
+const reframeData = [
+  { negative: "I quit", positive: "I will not quit" },
+  { negative: "I am sad", positive: "I am happy" },
+  { negative: "I can’t do it", positive: "I can do it" },
+  { negative: "I’ll never be good enough", positive: "I will try becoming better each day" },
+  { negative: "Things never work out for me", positive: "Things will work out for me" }
+];
+
+let currentSentence = 0;
+
+function loadReframe() {
+  const sentenceEl = document.getElementById("negative-sentence");
+  const feedbackEl = document.getElementById("feedback");
+  const inputEl = document.getElementById("user-input");
+
+  if (currentSentence < reframeData.length) {
+    sentenceEl.textContent = reframeData[currentSentence].negative;
+    feedbackEl.textContent = "";
+    inputEl.value = "";
+  } else {
+    sentenceEl.textContent = "✨ Well done! You completed all sentences!";
+    feedbackEl.textContent = "";
+    document.querySelector(".submit-btn").style.display = "none";
+    inputEl.style.display = "none";
+  }
+}
+
+function checkReframe() {
+  const input = document.getElementById("user-input").value.trim().toLowerCase();
+  const feedbackEl = document.getElementById("feedback");
+
+  const correctAnswer = reframeData[currentSentence].positive.toLowerCase();
+
+  if (input === correctAnswer) {
+    feedbackEl.textContent = "✅ Good job!";
+    feedbackEl.style.color = "green";
+    currentSentence++;
+    setTimeout(loadReframe, 1500);
+  } else {
+    feedbackEl.textContent = "❌ Try again!";
+    feedbackEl.style.color = "red";
+  }
+}
+
+// Load the first sentence when page starts
+document.addEventListener("DOMContentLoaded", loadReframe);
