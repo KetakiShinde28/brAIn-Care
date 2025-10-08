@@ -84,3 +84,54 @@ document.addEventListener("DOMContentLoaded", () => {
 
   startGame();
 });
+
+// ===========================
+// Breathing Game Logic
+// ===========================
+
+function startBreathing() {
+  const phaseText = document.querySelector(".phase-text");
+  const circle = document.querySelector(".circle");
+  const startBtn = document.querySelector(".start-btn");
+
+  startBtn.disabled = true;
+  startBtn.textContent = "Relaxing...";
+  phaseText.textContent = "Inhale...";
+
+  let cycle = 0;
+  const totalCycles = 3;
+
+  function breathingCycle() {
+    // Inhale phase
+    phaseText.textContent = "Inhale...";
+    circle.style.animation = "expand 4s ease-in-out forwards";
+
+    setTimeout(() => {
+      // Hold phase
+      phaseText.textContent = "Hold...";
+      circle.style.animation = "none";
+      circle.style.transform = "scale(1.5)";
+
+      setTimeout(() => {
+        // Exhale phase
+        phaseText.textContent = "Exhale...";
+        circle.style.animation = "contract 4s ease-in-out forwards";
+
+        setTimeout(() => {
+          cycle++;
+          if (cycle < totalCycles) {
+            breathingCycle();
+          } else {
+            phaseText.textContent = "Well done!";
+            circle.style.animation = "none";
+            circle.style.transform = "scale(1)";
+            startBtn.disabled = false;
+            startBtn.textContent = "Restart";
+          }
+        }, 6000); // exhale duration
+      }, 5000); // hold duration
+    }, 6000); // inhale duration
+  }
+
+  breathingCycle();
+}

@@ -125,3 +125,129 @@ body.match-game-page {
     height: 80px;
   }
 }
+
+/* ===========================
+   Breathing Game Styles
+   =========================== */
+
+.game-header {
+  background: #8ac9f8; /* matches your match-game header */
+  text-align: center;
+  padding: 25px 10px 20px;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.game-header h1 {
+  color: #1565c0;
+  font-size: 28px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.game-header p {
+  color: #0d47a1;
+  font-size: 15px;
+  margin: 0;
+}
+
+.breathing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  border-radius: 20px 20px 20px 20px;
+  background: linear-gradient(135deg, #b2cee1, #e2ebf0); /* calm blue tone */
+  overflow: hidden;
+}
+
+.breathing-container h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.instruction {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Circle Animation Element */
+.circle {
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 149, 165, 0.496);
+  border-radius: 50%;
+  box-shadow: 0 0 40px rgba(195, 134, 143, 0.5);
+  margin: 40px 0;
+  transition: transform 4s ease-in-out;
+}
+
+.phase-text {
+  font-size: 20px;
+  color: #333;
+  margin-top: 10px;
+  height: 24px;
+  font-weight: 500;
+}
+
+/* Start Button */
+.start-btn {
+  background-color: #f06292;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.3s ease;
+}
+
+.start-btn:hover {
+  background-color: #ec407a;
+}
+
+/* Back Button (modern style) */
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #333;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+  transform: translateX(-2px);
+}
+
+.arrow {
+  font-size: 16px;
+}
+
+/* Keyframes for animation */
+@keyframes expand {
+  from { transform: scale(1); }
+  to { transform: scale(1.5); }
+}
+
+@keyframes contract {
+  from { transform: scale(1.5); }
+  to { transform: scale(1); }
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Breathing Exercise</title>
+  <link rel="stylesheet" href="games-style.css">
+</head>
+<body class="breathing-page">
+
+  <!-- Back Button -->
+  <button class="back-btn" onclick="window.location.href='games.html'">
+    <span class="arrow">←</span> Back
+  </button>
+
+  <!-- Header Section (same theme as Match the Tiles) -->
+  <header class="game-header">
+    <h1>Breathing Exercise 🌸</h1>
+    <p>Follow the circle — inhale, hold, and exhale to relax.</p>
+  </header>
+
+  <!-- Main Container -->
+  <main class="breathing-container">
+    <div class="circle"></div>
+    <div class="phase-text">Press start to begin</div>
+    <button class="start-btn" onclick="startBreathing()">Start</button>
+  </main>
+
+  <script src="games-script.js"></script>
+</body>
+</html>
