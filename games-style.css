@@ -324,38 +324,52 @@ body.match-game-page {
 }
 
 /* ===========================
-   Step Boost Styles (Updated)
+   Step Boost Styles (Final)
    =========================== */
 
 .step-container {
   max-width: 800px;
-  margin: 40px auto;
-  padding: 20px;
+  margin: 60px auto;
+  padding: 0;
   text-align: center;
-  background-color: #e0f0ff; /* lighter blue similar to match-game */
+  background: linear-gradient(135deg, #cde8fac7, #e2ebf0); 
   border-radius: 20px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
   position: relative;
 }
 
-h2 {
-  font-size: 28px;
-  margin-bottom: 10px;
-  color: #1a73e8; /* match-game heading color */
-  z-index: 1;
+/* Header banner (uniform color like other games) */
+.step-header {
+  background-color: #8ac9f8; 
+  padding: 25px 20px;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
-.instruction {
+.step-header h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+  color: #1a73e8;
+}
+
+.step-header p {
   color: #555;
-  margin-bottom: 25px;
   font-size: 16px;
 }
 
+/* Activities section */
+.activities {
+  padding: 25px 20px;
+  background-color: #f9fcff;
+  border-radius: 20px 20px;
+}
+
 .activity-card {
-  background: white;
+  background: rgba(255, 192, 192, 0.663);
   border-radius: 15px;
   padding: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -370,25 +384,28 @@ h2 {
   color: #222;
 }
 
+/* Controls (for timer buttons) */
 .controls {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 10px;
 }
 
-/* Buttons - uniform size and style */
+/* Buttons - uniform style and sizing */
 .start-btn,
 .pause-btn,
 .end-btn {
   border: none;
   border-radius: 25px;
   padding: 10px 22px;
+  width: 100px;
+  height: 40px;
   cursor: pointer;
   font-size: 15px;
   font-weight: 500;
   color: white;
   transition: background 0.3s ease, transform 0.2s ease;
-  min-width: 85px;
 }
 
 .start-btn {
@@ -415,10 +432,19 @@ h2 {
   transform: scale(1.05);
 }
 
+/* Center align single button cards ("I Did It") */
+.activity-card[data-type="done"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Back Button (proper placement inside page) */
 .back-btn {
   position: absolute;
-  top: -10px;
-  left: -10px;
+  top: 20px;
+  left: 20px;
   background: #ffffff;
   border: 1px solid #ddd;
   border-radius: 30px;
@@ -428,6 +454,7 @@ h2 {
   color: #1a73e8;
   font-size: 14px;
   transition: all 0.3s ease;
+  z-index: 10;
 }
 .back-btn:hover {
   background: #f0f8ff;
